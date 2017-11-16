@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuButtonCont1 : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class MenuButtonCont1 : MonoBehaviour {
 	}
     public void ButtonPush()
     {
-        Debug.Log("unk");
+        //Debug.Log("unk");
+		SceneManager.LoadScene ("Main");
     }
 }

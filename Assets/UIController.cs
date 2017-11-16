@@ -83,7 +83,7 @@ public class UIController : MonoBehaviour
     {
         //scoreText.GetComponent<Text>().text = "Score:" + score.ToString("D4");
 
-        Vector3 fly = GameObject.Find("fly").GetComponent<FlyController>().FlyNow();
+        //Vector3 fly = GameObject.Find("fly").GetComponent<FlyController>().FlyNow();
         //debagText.GetComponent<Text>().text = fly.ToString();
         //Debug.Log(fly);
 
@@ -96,25 +96,10 @@ public class UIController : MonoBehaviour
         }
 
 
-        if (score >= goal)
-        {
-            goalButton.SetActive(true);
-            okoText.GetComponent<Text>().text = "٩(๑`^´๑)۶";
-
-            if (GameObject.Find("fly") != null)
-            {
-                if ((goalAreaX1 < fly.x) & (fly.x < goalAreaX2) &
-                    (goalAreaY1 > fly.y) & (fly.y > goalAreaY2))
-                {
-					GameClear ();
-                    //Application.CaptureScreenshot("unk.png");
-                    //DateTime dt = DateTime.Now;
-
-                    //ScreenCapture.CaptureScreenshot(dt.ToString(Application.dataPath + "/yyyyMMddHHmmss") + ".png");
-
-                }
-            }
-        }
+		if (score >= goal) {
+			goalButton.SetActive (true);
+			okoText.GetComponent<Text> ().text = "٩(๑`^´๑)۶";
+		}
         scoreText.GetComponent<Text>().text = "Score:" + score.ToString("D4");
     }
 }
