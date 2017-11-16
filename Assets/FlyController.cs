@@ -96,12 +96,16 @@ public class FlyController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-		if (coll.gameObject.tag == "Body_teController") {
+		Debug.Log (coll.gameObject.name);
+		if (coll.gameObject.name == "body_tePrefab(Clone)") {
 			GameObject.Find ("Canvas").GetComponent<UIController> ().GameOver ();
 			Destroy (coll.gameObject);
 			Destroy (gameObject);
-		} else if (coll.gameObject.tag == "reset_button_off") {
-			GameObject.Find ("Canvas").GetComponent<UIController> ().GameClear ();
+		} else if (coll.gameObject.name == "reset_buttn_off") {
+			UIController ui = GameObject.Find ("Canvas").GetComponent<UIController> ();
+			if (ui.isClearable()) {
+				ui.GameClear ();
+			}
 		}
     }
 

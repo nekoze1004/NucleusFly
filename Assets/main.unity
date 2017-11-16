@@ -439,13 +439,14 @@ GameObject:
   m_Component:
   - component: {fileID: 889249222}
   - component: {fileID: 889249221}
+  - component: {fileID: 889249223}
   m_Layer: 0
   m_Name: reset_buttn_off
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &889249221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -503,6 +504,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &889249223
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 889249220}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.5}
+  serializedVersion: 2
+  m_Radius: 1.7
 --- !u!1 &896081565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,3 +1340,5 @@ MonoBehaviour:
   goalButton: {fileID: 889249220}
   Hand: {fileID: 1500432598323160, guid: 72e14bb4eeec8f24ca716ea5ae83a2f8, type: 2}
   clearImg: {fileID: 1684413820}
+  isClear: 0
+  isGameOver: 0
