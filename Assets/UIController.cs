@@ -6,8 +6,7 @@ using System;
 public class UIController : MonoBehaviour
 {
     public GameObject goalButton;
-    public GameObject Hand1;
-    public GameObject Hand2;
+    public GameObject Hand;
     public GameObject clearImg;
 
     int score = 0;
@@ -41,8 +40,7 @@ public class UIController : MonoBehaviour
         this.scoreText = GameObject.Find("Score");
         this.gameOverText = GameObject.Find("GameOver");
         this.debagText = GameObject.Find("Debag");
-        Hand1.SetActive(true);
-        Hand2.SetActive(true);
+        Hand.SetActive(true);
         goalButton.SetActive(false);
         clearImg.SetActive(false);
     }
@@ -67,8 +65,7 @@ public class UIController : MonoBehaviour
                 if ((goalAreaX1 < fly.x) & (fly.x < goalAreaX2) &
                     (goalAreaY1 > fly.y) & (fly.y > goalAreaY2))
                 {
-                    Hand1.SetActive(false);
-                    Hand2.SetActive(false);
+                    Hand.SetActive(false);
                     gameOverText.GetComponent<Text>().text = "GameClear";
                     clearImg.SetActive(true);
                     //Application.CaptureScreenshot("unk.png");

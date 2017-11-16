@@ -15,7 +15,6 @@ public class Body_teGenR : MonoBehaviour
     // Update is called once per frame
     void GenTe()
     {
-
-        Instantiate(body_tePrefab, new Vector3(-2.5f + 5 * Random.value, -6, 0), Quaternion.identity);
+    	Instantiate(body_tePrefab, new Vector3(-2.5f + 5 * Random.value, -6, 0), Quaternion.identity);
     }
 }
