@@ -15,7 +15,7 @@ public class FlyController : MonoBehaviour {
 		position.z = 10f;
 		// マウス位置座標をスクリーン座標からワールド座標に変換する
 		Vector3 screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(position);
-		Debug.Log (screenToWorldPointPosition);
+		// Debug.Log (screenToWorldPointPosition);
 		transform.position = screenToWorldPointPosition;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -96,9 +96,13 @@ public class FlyController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        GameObject.Find("Canvas").GetComponent<UIController>().GameOver();
-        Destroy(coll.gameObject);
-        Destroy(gameObject);
+		if (coll.gameObject.tag == "Body_teController") {
+			GameObject.Find ("Canvas").GetComponent<UIController> ().GameOver ();
+			Destroy (coll.gameObject);
+			Destroy (gameObject);
+		} else if (coll.gameObject.tag == "reset_button_off") {
+			GameObject.Find ("Canvas").GetComponent<UIController> ().GameClear ();
+		}
     }
 
     public Vector3 FlyNow()

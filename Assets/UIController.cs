@@ -41,6 +41,13 @@ public class UIController : MonoBehaviour
         this.gameOverText.GetComponent<Text>().text = "GameOver";
     }
 
+	public void GameClear()
+	{
+		Hand.SetActive(false);
+		gameOverText.GetComponent<Text>().text = "GameClear";
+		clearImg.SetActive(true);
+	}
+
     void Start()
     {
         this.scoreText = GameObject.Find("Score");
@@ -79,9 +86,7 @@ public class UIController : MonoBehaviour
                 if ((goalAreaX1 < fly.x) & (fly.x < goalAreaX2) &
                     (goalAreaY1 > fly.y) & (fly.y > goalAreaY2))
                 {
-                    Hand.SetActive(false);
-                    gameOverText.GetComponent<Text>().text = "GameClear";
-                    clearImg.SetActive(true);
+					GameClear ();
                     //Application.CaptureScreenshot("unk.png");
                     //DateTime dt = DateTime.Now;
 
