@@ -157,7 +157,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 436609d31b1b9f442b078e173a34644b, type: 2}
-  m_RootGameObject: {fileID: 1684413820}
   m_IsPrefabParent: 0
 --- !u!1 &676719114
 GameObject:
@@ -183,7 +182,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 676719114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 559.4906, z: 0}
+  m_LocalPosition: {x: 0, y: 129.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2015143109}
@@ -315,7 +314,6 @@ GameObject:
   m_Component:
   - component: {fileID: 896081567}
   - component: {fileID: 896081566}
-  - component: {fileID: 896081568}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -349,19 +347,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &896081568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 896081565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d26fb50131e6054bab863f56851aa6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body_tePrefab: {fileID: 1769754901844892, guid: 92fc1239e347dfd438df411b45be72fe,
-    type: 2}
 --- !u!1 &1057989539
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -941,8 +926,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2015143105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 186.5, y: 293.5, z: 0}
-  m_LocalScale: {x: 0.46625, y: 0.46625, z: 0.46625}
+  m_LocalPosition: {x: 354.5, y: 199.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 676719115}
   - {fileID: 1057989540}
@@ -967,6 +952,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalButton: {fileID: 889249220}
-  Hand1: {fileID: 1500432598323160, guid: 72e14bb4eeec8f24ca716ea5ae83a2f8, type: 2}
-  Hand2: {fileID: 1769754901844892, guid: 92fc1239e347dfd438df411b45be72fe, type: 2}
+  Hand: {fileID: 1500432598323160, guid: 72e14bb4eeec8f24ca716ea5ae83a2f8, type: 2}
   clearImg: {fileID: 1684413820}
