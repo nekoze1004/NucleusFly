@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     GameObject scoreText;
     GameObject gameOverText;
     GameObject debagText;
+    GameObject okoText;
 
     float goalAreaX1 = -1.3f;
     float goalAreaX2 = 1.3f;
@@ -30,6 +31,11 @@ public class UIController : MonoBehaviour
         return this.score;
     }
 
+    public int ReturnGoal()
+    {
+        return this.goal;
+    }
+
     public void GameOver()
     {
         this.gameOverText.GetComponent<Text>().text = "GameOver";
@@ -40,6 +46,8 @@ public class UIController : MonoBehaviour
         this.scoreText = GameObject.Find("Score");
         this.gameOverText = GameObject.Find("GameOver");
         this.debagText = GameObject.Find("Debag");
+        this.okoText = GameObject.Find("oko");
+        this.okoText.GetComponent<Text>().text = "(´・ω・｀)";
         Hand.SetActive(true);
         goalButton.SetActive(false);
         clearImg.SetActive(false);
@@ -47,16 +55,22 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        scoreText.GetComponent<Text>().text = "Score:" + score.ToString("D4");
+        //scoreText.GetComponent<Text>().text = "Score:" + score.ToString("D4");
 
         Vector3 fly = GameObject.Find("fly").GetComponent<FlyController>().FlyNow();
         //debagText.GetComponent<Text>().text = fly.ToString();
-        //Debug.Log(fly);
+        Debug.Log(fly);
+
+        if(score >= goal / 2)
+        {
+            okoText.GetComponent<Text>().text = "ヾ(｡｀Д´｡)ﾉ彡";
+        }
 
 
-        if (score > goal)
+        if (score >= goal)
         {
             goalButton.SetActive(true);
+            okoText.GetComponent<Text>().text = "٩(๑`^´๑)۶";
 
             if (GameObject.Find("fly") != null)
             {

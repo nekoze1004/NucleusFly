@@ -3,42 +3,87 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyController : MonoBehaviour {
-	
+
+    float NomalSpeed = 0.1f;
+    float LowSpeed = 0.05f;
+    float HighSpeed = 0.2f;
+
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(-0.1f, 0, 0);
+            transform.Translate(-1 * NomalSpeed, 0, 0);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(0.1f, 0, 0);
+            transform.Translate(NomalSpeed, 0, 0);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(0, 0.1f, 0);
+            transform.Translate(0, NomalSpeed, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(0, -0.1f, 0);
+            transform.Translate(0, -1 * NomalSpeed, 0);
         }
 
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(-0.1f, 0, 0);
+        if (Input.GetKey(KeyCode.LeftShift)){
+            //LowSpeed 4方向 
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.Translate(-1 * LowSpeed, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.Translate(LowSpeed, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.Translate(0, LowSpeed, 0);
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.Translate(0, -1 * LowSpeed, 0);
+            }
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(0.1f, 0, 0);
+        else if (Input.GetKey(KeyCode.LeftControl)){
+            //HighSpeed 4方向
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.Translate(-1 * HighSpeed, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.Translate(HighSpeed, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.Translate(0, HighSpeed, 0);
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.Translate(0, -1 * HighSpeed, 0);
+            }
         }
-        if (Input.GetKey(KeyCode.W))
+        else
         {
-            transform.Translate(0, 0.1f, 0);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(0, -0.1f, 0);
+            //NomalSpeed 4方向
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.Translate(-1 * NomalSpeed, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.Translate(NomalSpeed, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.Translate(0, NomalSpeed, 0);
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.Translate(0, -1 * NomalSpeed, 0);
+            }
         }
     }
 
