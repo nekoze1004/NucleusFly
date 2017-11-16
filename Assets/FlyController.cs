@@ -10,6 +10,13 @@ public class FlyController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Vector3 position = Input.mousePosition;
+		// Z軸修正
+		position.z = 10f;
+		// マウス位置座標をスクリーン座標からワールド座標に変換する
+		Vector3 screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(position);
+		Debug.Log (screenToWorldPointPosition);
+		transform.position = screenToWorldPointPosition;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(-1 * NomalSpeed, 0, 0);
