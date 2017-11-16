@@ -21,9 +21,19 @@ public class UIController : MonoBehaviour
     float goalAreaY1 = 4.0f;
     float goalAreaY2 = 2.0f;
 
+	public Boolean isClear = false;
+	public Boolean isGameOver = false;
+
+	public Boolean isClearable()
+	{
+		return score > goal;
+	}
+
     public void AddScore()
     {
-        this.score += 10;
+		if (!isGameOver) {
+			this.score += 10;
+		}
     }
 
     public int ReturnScore()
@@ -38,14 +48,23 @@ public class UIController : MonoBehaviour
 
     public void GameOver()
     {
-        this.gameOverText.GetComponent<Text>().text = "GameOver";
+		if (!isClear) {
+			isGameOver = true;
+			this.gameOverText.GetComponent<Text> ().text = "GameOver";
+		}
     }
 
 	public void GameClear()
 	{
+		isClear = true;
 		Hand.SetActive(false);
 		gameOverText.GetComponent<Text>().text = "GameClear";
 		clearImg.SetActive(true);
+		GameObject.Find ("GameObject").GetComponent<Body_teGenerator> ().CancelInvoke ();
+		GameObject[] clones = GameObject.FindGameObjectsWithTag ("hand");
+		foreach (GameObject clone in clones) {
+			Destroy (clone);
+		}
 	}
 
     void Start()
@@ -56,8 +75,8 @@ public class UIController : MonoBehaviour
         this.okoText = GameObject.Find("oko");
         this.okoText.GetComponent<Text>().text = "(´・ω・｀)";
         Hand.SetActive(true);
-        goalButton.SetActive(false);
-        clearImg.SetActive(false);
+        goalButton.SetActive(true);
+		clearImg.SetActive(false);
     }
 
     void Update()
@@ -84,8 +103,6 @@ public class UIController : MonoBehaviour
 
             if (GameObject.Find("fly") != null)
             {
-                
-
                 if ((goalAreaX1 < fly.x) & (fly.x < goalAreaX2) &
                     (goalAreaY1 > fly.y) & (fly.y > goalAreaY2))
                 {
@@ -98,5 +115,6 @@ public class UIController : MonoBehaviour
                 }
             }
         }
+        scoreText.GetComponent<Text>().text = "Score:" + score.ToString("D4");
     }
 }

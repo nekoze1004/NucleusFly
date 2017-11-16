@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58322439244279660}
   m_Layer: 0
   m_Name: body_tePrefab
-  m_TagString: Untagged
+  m_TagString: hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
