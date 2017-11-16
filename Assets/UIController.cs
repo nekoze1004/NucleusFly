@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
     public GameObject clearImg;
 
     int score = 0;
-    int goal = 100;
+    int goal = 500;
     GameObject scoreText;
     GameObject gameOverText;
     GameObject debagText;
@@ -66,11 +66,14 @@ public class UIController : MonoBehaviour
 
         Vector3 fly = GameObject.Find("fly").GetComponent<FlyController>().FlyNow();
         //debagText.GetComponent<Text>().text = fly.ToString();
-        Debug.Log(fly);
+        //Debug.Log(fly);
 
-        if(score >= goal / 2)
+        if(score >= goal / 3 * 2)
         {
             okoText.GetComponent<Text>().text = "ヾ(｡｀Д´｡)ﾉ彡";
+        }else if(score >= goal / 3)
+        {
+            okoText.GetComponent<Text>().text = "＼(*｀∧´)／";
         }
 
 
