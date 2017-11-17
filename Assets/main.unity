@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 896081567}
   - component: {fileID: 896081566}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: HandGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -736,11 +736,11 @@ GameObject:
   - component: {fileID: 1188578155}
   - component: {fileID: 1188578154}
   m_Layer: 0
-  m_Name: fly
-  m_TagString: Untagged
+  m_Name: Fly
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!50 &1188578154
 Rigidbody2D:
@@ -1310,8 +1310,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2015143105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 233, y: 131, z: 0}
-  m_LocalScale: {x: 0.43666667, y: 0.43666667, z: 0.43666667}
+  m_LocalPosition: {x: 354.5, y: 199.5, z: 0}
+  m_LocalScale: {x: 0.665, y: 0.665, z: 0.665}
   m_Children:
   - {fileID: 676719115}
   - {fileID: 1057989540}
@@ -1339,6 +1339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalButton: {fileID: 889249220}
   Hand: {fileID: 1500432598323160, guid: 72e14bb4eeec8f24ca716ea5ae83a2f8, type: 2}
+  handGen: {fileID: 0}
   clearImg: {fileID: 1684413820}
   isClear: 0
   isGameOver: 0
