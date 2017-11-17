@@ -5,11 +5,9 @@ using UnityEngine;
 public class Body_teGenerator : MonoBehaviour {
 
     public GameObject body_tePrefab;
-	int width = Screen.width;
-	int height = Screen.height;
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
         InvokeRepeating("GenTeToDown", 1, 1);
 		InvokeRepeating("GenTeToUp", 1, 1);
 		InvokeRepeating("GenTeToLeft", 1, 1);

@@ -100,7 +100,7 @@ public class FlyController : MonoBehaviour {
 		if (coll.gameObject.name == "body_tePrefab(Clone)") {
 			GameObject.Find ("Canvas").GetComponent<UIController> ().GameOver ();
 			Destroy (coll.gameObject);
-			Destroy (gameObject);
+			gameObject.SetActive (false);
 		} else if (coll.gameObject.name == "reset_buttn_off") {
 			UIController ui = GameObject.Find ("Canvas").GetComponent<UIController> ();
 			if (ui.isClearable()) {
