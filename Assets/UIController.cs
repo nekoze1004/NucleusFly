@@ -11,7 +11,7 @@ public class UIController : MonoBehaviour
     public GameObject clearImg;
 
     int score = 0;
-    int goal = 10;
+    int goal = 500;
     GameObject scoreText;
     GameObject gameOverText;
     // GameObject debagText;
